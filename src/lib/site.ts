@@ -7,7 +7,7 @@ export const SITE = {
   location: 'Chakan, Pune, Maharashtra, India',
   phone: '+91 89834 99404',
   phoneHref: 'tel:+918983499404',
-  email: '[ADD EMAIL]',
+  email: 'adminvelora.digital@gmail.com',
   whatsapp: 'https://wa.me/918983499404',
   area: 'Chakan, Pune, PCMC and Maharashtra',
 }
