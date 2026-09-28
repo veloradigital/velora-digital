@@ -5,10 +5,10 @@ export const SITE = {
     'Velora Digital is a digital marketing agency in Chakan, Pune, helping local businesses grow online with Google Business Profile management, Local SEO, SEO, AI Search optimization, Google Reviews, WhatsApp automation and conversion-focused websites.',
   url: 'https://veloradigital.com',
   location: 'Chakan, Pune, Maharashtra, India',
-  phone: '[ADD PHONE NUMBER]',
-  phoneHref: '',
+  phone: '+91 89834 99404',
+  phoneHref: 'tel:+918983499404',
   email: '[ADD EMAIL]',
-  whatsapp: 'https://wa.me/',
+  whatsapp: 'https://wa.me/918983499404',
   area: 'Chakan, Pune, PCMC and Maharashtra',
 }
 

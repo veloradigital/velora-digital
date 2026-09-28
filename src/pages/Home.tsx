@@ -6,6 +6,20 @@ import ServiceIcon from '../components/ServiceIcon'
 import { SERVICES, INDUSTRIES, SITE } from '../lib/site'
 import { organizationSchema, localBusinessSchema, websiteSchema, faqSchema } from '../lib/schema'
 
+const localSeoFactors = [
+  { icon: 'map-pin', title: 'Google Business Profile', desc: 'Complete, optimized profile with accurate details and photos.' },
+  { icon: 'search', title: 'Local Keywords', desc: 'Targeting searches like "near me" and location-based queries.' },
+  { icon: 'star', title: 'Reviews & Ratings', desc: 'Generating and managing reviews to strengthen local signals.' },
+  { icon: 'navigation', title: 'Local Citations', desc: 'Consistent name, address and phone across all directories.' },
+]
+
+const reviewSteps = [
+  { num: '01', title: 'Request Reviews', desc: 'Automated WhatsApp or SMS requests sent to happy customers at the right moment.' },
+  { num: '02', title: 'Monitor & Alert', desc: 'Real-time alerts when a new review is posted so nothing goes unanswered.' },
+  { num: '03', title: 'Respond Professionally', desc: 'Every review — positive or negative — gets a thoughtful, professional reply.' },
+  { num: '04', title: 'Track & Improve', desc: 'Monitor your rating and review volume to strengthen your local reputation.' },
+]
+
 const homeFaqs: FAQItem[] = [
   {
     question: 'What does Velora Digital do for local businesses?',
@@ -69,23 +83,7 @@ export default function Home() {
               <span>Serving Chakan, Pune, PCMC & Maharashtra</span>
             </div>
           </div>
-          <div className="hero-visual animate-in animate-delay-2">
-            <div className="hero-card">
-              <div className="hero-card-header">
-                <ServiceIcon name="map-pin" size={20} />
-                <span>Google Maps Ranking</span>
-              </div>
-              <div className="hero-card-body">
-                <div className="ranking-row"><span className="rank-badge rank-1">1</span><span>Your Business</span><span className="rank-up">↑ 3</span></div>
-                <div className="ranking-row"><span className="rank-badge rank-2">2</span><span>Competitor A</span><span className="rank-down">↓ 1</span></div>
-                <div className="ranking-row"><span className="rank-badge rank-3">3</span><span>Competitor B</span><span className="rank-neutral">—</span></div>
-              </div>
-              <div className="hero-card-footer">
-                <div><strong>+147%</strong><br /><span>Local impressions</span></div>
-                <div><strong>+89%</strong><br /><span>Direction calls</span></div>
-              </div>
-            </div>
-          </div>
+
         </div>
         <style>{`
           .hero {
@@ -94,10 +92,7 @@ export default function Home() {
             overflow: hidden;
           }
           .hero-inner {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 56px;
-            align-items: center;
+            max-width: 720px;
           }
           .hero-sub {
             font-size: 1.25rem;
@@ -116,64 +111,8 @@ export default function Home() {
             font-size: 0.875rem;
             color: var(--color-neutral-500);
           }
-          .hero-visual { display: flex; justify-content: center; }
-          .hero-card {
-            background: #fff;
-            border: 1px solid var(--color-neutral-200);
-            border-radius: var(--radius-xl);
-            padding: 28px;
-            width: 100%;
-            max-width: 380px;
-            box-shadow: var(--shadow-lg);
-          }
-          .hero-card-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            color: var(--color-neutral-900);
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--color-neutral-100);
-          }
-          .hero-card-header svg { color: var(--color-primary-600); }
-          .ranking-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 0;
-            font-size: 0.9375rem;
-            border-bottom: 1px solid var(--color-neutral-100);
-          }
-          .ranking-row:last-child { border-bottom: none; }
-          .rank-badge {
-            width: 28px; height: 28px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.8125rem; font-weight: 700;
-            flex-shrink: 0;
-          }
-          .rank-1 { background: var(--color-success-500); color: #fff; }
-          .rank-2 { background: var(--color-neutral-300); color: var(--color-neutral-700); }
-          .rank-3 { background: var(--color-accent-400); color: var(--color-neutral-800); }
-          .ranking-row > span:nth-child(2) { flex: 1; color: var(--color-neutral-700); }
-          .rank-up { color: var(--color-success-600); font-weight: 600; font-size: 0.8125rem; }
-          .rank-down { color: var(--color-error-500); font-weight: 600; font-size: 0.8125rem; }
-          .rank-neutral { color: var(--color-neutral-400); font-size: 0.8125rem; }
-          .hero-card-footer {
-            display: flex;
-            gap: 24px;
-            padding-top: 20px;
-            margin-top: 8px;
-            border-top: 1px solid var(--color-neutral-100);
-          }
-          .hero-card-footer div { text-align: center; flex: 1; }
-          .hero-card-footer strong { font-size: 1.5rem; color: var(--color-primary-700); display: block; }
-          .hero-card-footer span { font-size: 0.75rem; color: var(--color-neutral-500); }
           @media (max-width: 880px) {
-            .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-            .hero-visual { order: -1; }
-            .hero-card { max-width: 340px; }
+            .hero-inner { max-width: 100%; }
           }
         `}</style>
       </section>
@@ -353,66 +292,44 @@ export default function Home() {
               <Link to="/local-seo" className="btn btn-primary">Explore Local SEO Services</Link>
             </div>
             <div className="feature-visual">
-              <div className="mock-map">
-                <div className="mock-search-bar">
-                  <span className="mock-search-icon">🔍</span>
-                  <span>restaurant near Chakan Pune</span>
-                </div>
-                <div className="mock-results">
-                  <div className="mock-result mock-result-featured">
-                    <div className="mock-pin">📍</div>
+              <div className="info-card-grid">
+                {localSeoFactors.map((f) => (
+                  <div key={f.title} className="info-card-item">
+                    <div className="service-icon-wrap">
+                      <ServiceIcon name={f.icon} size={22} />
+                    </div>
                     <div>
-                      <strong>Your Business</strong>
-                      <span>⭐⭐⭐⭐⭐ 4.9 · Chakan</span>
+                      <strong>{f.title}</strong>
+                      <p>{f.desc}</p>
                     </div>
                   </div>
-                  <div className="mock-result">
-                    <div className="mock-pin">📍</div>
-                    <div><strong>Competitor</strong><span>⭐⭐⭐⭐ 4.2 · Pune</span></div>
-                  </div>
-                  <div className="mock-result">
-                    <div className="mock-pin">📍</div>
-                    <div><strong>Another Business</strong><span>⭐⭐⭐ 3.8 · PCMC</span></div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
         <style>{`
           .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-          .mock-map {
+          .info-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+          }
+          .info-card-item {
             background: #fff;
             border: 1px solid var(--color-neutral-200);
-            border-radius: var(--radius-xl);
-            padding: 24px;
-            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
           }
-          .mock-search-bar {
-            display: flex; align-items: center; gap: 10px;
-            padding: 12px 16px;
-            border: 1px solid var(--color-neutral-300);
-            border-radius: 100px;
-            font-size: 0.875rem;
-            color: var(--color-neutral-600);
-            margin-bottom: 20px;
-          }
-          .mock-results { display: grid; gap: 12px; }
-          .mock-result {
-            display: flex; align-items: center; gap: 14px;
-            padding: 16px;
-            border: 1px solid var(--color-neutral-200);
-            border-radius: var(--radius-md);
-          }
-          .mock-result-featured {
-            border-color: var(--color-primary-400);
-            background: var(--color-primary-50);
-          }
-          .mock-pin { font-size: 1.25rem; }
-          .mock-result strong { display: block; font-size: 0.9375rem; color: var(--color-neutral-900); }
-          .mock-result span { font-size: 0.8125rem; color: var(--color-neutral-500); }
+          .info-card-item strong { display: block; font-size: 0.9375rem; color: var(--color-neutral-900); margin-bottom: 4px; }
+          .info-card-item p { font-size: 0.8125rem; color: var(--color-neutral-500); line-height: 1.5; }
+          .info-card-item .service-icon-wrap { width: 40px; height: 40px; margin-bottom: 0; flex-shrink: 0; }
           @media (max-width: 880px) {
             .feature-grid { grid-template-columns: 1fr; gap: 32px; }
+            .info-card-grid { grid-template-columns: 1fr; }
           }
         `}</style>
       </section>
@@ -422,22 +339,16 @@ export default function Home() {
         <div className="container">
           <div className="feature-grid">
             <div className="feature-visual">
-              <div className="review-mock">
-                <div className="review-mock-header">
-                  <span className="review-stars">★★★★★</span>
-                  <span className="review-rating">4.9</span>
-                </div>
-                <div className="review-mock-item">
-                  <div className="review-avatar">RS</div>
-                  <div>
-                    <strong>Rajesh S.</strong>
-                    <p>"Great service and very professional team."</p>
+              <div className="review-process-card">
+                {reviewSteps.map((step) => (
+                  <div key={step.num} className="review-step">
+                    <span className="review-step-num">{step.num}</span>
+                    <div>
+                      <strong>{step.title}</strong>
+                      <p>{step.desc}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="review-mock-reply">
-                  <strong>Owner response:</strong>
-                  <p>"Thank you, Rajesh! We appreciate your feedback."</p>
-                </div>
+                ))}
               </div>
             </div>
             <div>
@@ -460,33 +371,24 @@ export default function Home() {
         </div>
         <style>{`
           .reviews-section { background: var(--color-neutral-50); }
-          .review-mock {
+          .review-process-card {
             background: #fff;
             border: 1px solid var(--color-neutral-200);
             border-radius: var(--radius-xl);
             padding: 28px;
             box-shadow: var(--shadow-lg);
+            display: grid;
+            gap: 20px;
           }
-          .review-mock-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-          .review-stars { color: var(--color-accent-500); font-size: 1.25rem; letter-spacing: 2px; }
-          .review-rating { font-size: 1.5rem; font-weight: 800; color: var(--color-neutral-900); }
-          .review-mock-item { display: flex; gap: 14px; padding: 16px 0; border-top: 1px solid var(--color-neutral-100); }
-          .review-avatar {
-            width: 40px; height: 40px; border-radius: 50%;
+          .review-step { display: flex; gap: 16px; align-items: flex-start; }
+          .review-step-num {
+            width: 36px; height: 36px; border-radius: 50%;
             background: var(--color-primary-100); color: var(--color-primary-700);
             display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 0.8125rem; flex-shrink: 0;
+            font-weight: 800; font-size: 0.875rem; flex-shrink: 0;
           }
-          .review-mock-item strong { font-size: 0.9375rem; }
-          .review-mock-item p { font-size: 0.875rem; color: var(--color-neutral-600); margin-top: 4px; }
-          .review-mock-reply {
-            background: var(--color-neutral-50);
-            border-radius: var(--radius-md);
-            padding: 16px;
-            margin-top: 8px;
-          }
-          .review-mock-reply strong { font-size: 0.8125rem; color: var(--color-primary-700); }
-          .review-mock-reply p { font-size: 0.8125rem; color: var(--color-neutral-600); margin-top: 4px; }
+          .review-step strong { display: block; font-size: 0.9375rem; color: var(--color-neutral-900); margin-bottom: 4px; }
+          .review-step p { font-size: 0.8125rem; color: var(--color-neutral-500); line-height: 1.5; }
           @media (max-width: 880px) {
             .feature-grid { grid-template-columns: 1fr; }
             .feature-visual { order: -1; }
