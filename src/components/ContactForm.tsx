@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { SERVICES, SITE } from '../lib/site'
 
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'
+const WEB3FORMS_ACCESS_KEY = 'ef05f58f-b5b7-4ec5-9f61-f32ea476d456'
 
 type SubmitState = 'idle' | 'loading' | 'success' | 'error'
 
